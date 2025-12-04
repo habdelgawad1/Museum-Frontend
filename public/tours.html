@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Tours - Grand Egyptian Museum</title>
+    <link rel="stylesheet" href="home.css"/>
+    <link rel="stylesheet" href="tours.css"/>
+</head>
+<body>
+    <div class="home-container">
+        <header class="museum-header">
+            <div class="header-top">
+                <a href="index.html" class="back-button">← Home</a>
+                <a href="login.html" class="login-button">Login / Sign Up</a>
+            </div>
+            <h1>Virtual Tours</h1>
+            <p class="tagline">Explore Our Guided Museum Tours</p>
+        </header>
+
+        <section class="tours-section">
+            <div class="tours-controls">
+                <input type="text" id="searchTours" class="search-input" placeholder="Search tours...">
+                <select id="filterGuide" class="filter-select">
+                    <option value="">All Guides</option>
+                </select>
+            </div>
+
+            <div id="toursLoading" class="loading-message">
+                Loading tours...
+            </div>
+
+            <div id="toursError" class="error-message" style="display: none;">
+                Failed to load tours. Please try again later.
+            </div>
+
+            <div id="toursContainer" class="tours-grid">
+                <!-- Tours will be loaded here dynamically -->
+            </div>
+
+            <div id="noTours" class="no-data-message" style="display: none;">
+                No tours available at the moment.
+            </div>
+        </section>
+
+        <!-- Tour Details Modal -->
+        <div id="tourModal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div id="tourDetails">
+                    <!-- Tour details will be loaded here -->
+                </div>
+            </div>
+        </div>
+
+        <footer class="museum-footer">
+            <p>&copy; 2025 Grand Egyptian Museum.</p>
+            <p class="footer-links">
+                <a href="index.html">Home</a> |
+                <a href="tickets.html">Book Tickets</a> |
+                <a href="profile.html">My Profile</a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="tours.js"></script>
+</body>
+</html>

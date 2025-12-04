@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Tickets - Grand Egyptian Museum</title>
+    <link rel="stylesheet" href="home.css"/>
+    <link rel="stylesheet" href="tickets.css"/>
+</head>
+<body>
+    <div class="home-container">
+        <header class="museum-header">
+            <div class="header-top">
+                <a href="index.html" class="back-button">← Home</a>
+                <a href="login.html" class="login-button">Login / Sign Up</a>
+            </div>
+            <h1>Book Tickets</h1>
+            <p class="tagline">Reserve Your Visit Today</p>
+        </header>
+
+        <section class="booking-section">
+            <!-- Selected Tour Info -->
+            <div id="selectedTourInfo" class="info-card" style="display: none;">
+                <h2>Selected Tour</h2>
+                <div id="tourInfoContent"></div>
+            </div>
+
+            <!-- Booking Form -->
+            <div class="info-card">
+                <h2>Booking Details</h2>
+                <form id="bookingForm" class="booking-form">
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="tourSelect">Select Tour *</label>
+                            <select id="tourSelect" required>
+                                <option value="">-- Select a Tour --</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="bookingDate">Date *</label>
+                            <input type="date" id="bookingDate" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label for="bookingTime">Time *</label>
+                            <input type="time" id="bookingTime" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="numTickets">Number of Tickets *</label>
+                            <input type="number" id="numTickets" min="1" max="10" value="1" required>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="specialRequests">Special Requests</label>
+                        <textarea id="specialRequests" rows="4" placeholder="Any special requirements or requests..."></textarea>
+                    </div>
+
+                    <div class="booking-summary">
+                        <h3>Booking Summary</h3>
+                        <div class="summary-row">
+                            <span>Tour:</span>
+                            <span id="summaryTour">-</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Date & Time:</span>
+                            <span id="summaryDateTime">-</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Tickets:</span>
+                            <span id="summaryTickets">-</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total Price:</span>
+                            <span id="summaryTotal">$0.00</span>
+                        </div>
+                    </div>
+
+                    <div class="payment-section">
+                        <h3>Payment Method</h3>
+                        <div class="payment-options">
+                            <label class="radio-option">
+                                <input type="radio" name="paymentMethod" value="cash" checked>
+                                <span>Pay in Cash</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="paymentMethod" value="points">
+                                <span>Pay with Points</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Confirm Booking</button>
+                </form>
+            </div>
+
+            <!-- My Bookings Section -->
+            <div class="info-card">
+                <h2>My Bookings</h2>
+                <div id="bookingsLoading" class="loading-message">
+                    Loading your bookings...
+                </div>
+                <div id="bookingsList" class="bookings-list">
+                    <!-- Bookings will be loaded here -->
+                </div>
+                <div id="noBookings" class="no-data-message" style="display: none;">
+                    You don't have any bookings yet.
+                </div>
+            </div>
+        </section>
+
+        <footer class="museum-footer">
+            <p>&copy; 2025 Grand Egyptian Museum.</p>
+            <p class="footer-links">
+                <a href="index.html">Home</a> |
+                <a href="tours.html">Tours</a> |
+                <a href="profile.html">My Profile</a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="tickets.js"></script>
+</body>
+</html>

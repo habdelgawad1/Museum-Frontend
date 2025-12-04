@@ -1,0 +1,148 @@
+    body {
+        margin: 0;
+        font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+        background-image:
+            url('GrandEgyptianMuseumTour.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 380px;
+    }
+
+    .form-card{
+        background: linear-gradient(to bottom, #f5e6d3 0%, #e8d4b8 100%);
+        padding: 30px;
+        border-radius: 4px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.4),
+                    inset 0 0 0 3px #d4af37,
+                    inset 0 0 0 4px #8b6914;
+        border: 2px solid #b8860b;
+        position: relative;
+    }
+
+    .form-card::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: linear-gradient(45deg, #d4af37, #b8860b, #d4af37);
+        border-radius: 4px;
+        z-index: -1;
+    }
+
+    h2 {
+        margin-top: 0;
+        text-align: center;
+        color: #8b4513;
+        font-family: 'Trajan Pro', 'Palatino Linotype', serif;
+        font-size: 32px;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.3);
+        letter-spacing: 2px;
+        border-bottom: 3px double #d4af37;
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+    }
+
+    .input-group {
+        margin: 12px 0;
+    }
+
+    label {
+        font-size: 14px;
+        color: #5c4033;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    input {
+        width: 100%;
+        padding: 10px;
+        margin-top: 6px;
+        border: 2px solid #b8860b;
+        border-radius: 2px;
+        font-size: 15px;
+        background: #faf6ed;
+        color: #3e2723;
+        transition: all 0.3s ease;
+    }
+
+    input:focus {
+        outline: none;
+        border-color: #d4af37;
+        box-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+        background: #fff;
+    }
+
+     button {
+        width: 100%;
+        padding: 12px;
+        margin-top: 15px;
+        background: linear-gradient(to bottom, #d4af37 0%, #b8860b 100%);
+        color: #1a1a2e;
+        border: 2px solid #8b6914;
+        border-radius: 2px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    button:hover {
+        background: linear-gradient(to bottom, #f4cf67 0%, #d4af37 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    button:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .error{
+        font-size: 12px;
+        color: #c41e3a;
+        font-weight: 600;
+        margin-top: 4px;
+        display: block;
+    }
+
+    .switch {
+        margin-top: 12px;
+        text-align: center;
+    }
+
+    p {
+        text-align: center;
+        color: #5c4033;
+        font-size: 14px;
+        margin-top: 15px;
+    }
+
+    a {
+        color: #b8860b;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+
+    a:hover {
+        color: #d4af37;
+        text-decoration: underline;
+    }
+

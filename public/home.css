@@ -1,0 +1,528 @@
+/* Modern Egyptian Museum Design */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary-gold: #DAA520;
+    --secondary-gold: #B8860B;
+    --dark-gold: #8B6914;
+    --accent-gold: #FFD700;
+    --deep-blue: #0f3460;
+    --navy: #16213e;
+    --dark-navy: #1a1a2e;
+    --white: #ffffff;
+    --off-white: #f8f9fa;
+    --text-dark: #2c3e50;
+    --text-light: #6c757d;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, var(--dark-navy) 0%, var(--navy) 50%, var(--deep-blue) 100%);
+    min-height: 100vh;
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('GrandEgyptianMuseumTour.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.05;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.home-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.museum-header {
+    text-align: center;
+    padding: 60px 40px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    margin-bottom: 40px;
+    position: relative;
+    border: 1px solid rgba(218, 165, 32, 0.2);
+    overflow: hidden;
+}
+
+.museum-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-gold), var(--accent-gold), var(--primary-gold));
+}
+
+.header-top {
+    position: absolute;
+    top: 25px;
+    right: 40px;
+    z-index: 10;
+}
+
+.login-button {
+    background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+    color: var(--white);
+    padding: 12px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    border: none;
+    box-shadow: 0 4px 15px rgba(218, 165, 32, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block;
+}
+
+.login-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(218, 165, 32, 0.5);
+    background: linear-gradient(135deg, var(--accent-gold), var(--primary-gold));
+}
+
+.museum-header h1 {
+    margin: 0;
+    font-size: 56px;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-gold) 0%, var(--secondary-gold) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tagline {
+    margin: 15px 0 0 0;
+    font-size: 18px;
+    color: var(--text-light);
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.navigation-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.nav-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-dark);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(218, 165, 32, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(218, 165, 32, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.nav-card:hover::before {
+    left: 100%;
+}
+
+.nav-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(218, 165, 32, 0.3);
+    border-color: var(--primary-gold);
+}
+
+.nav-icon {
+    font-size: 56px;
+    margin-bottom: 20px;
+    filter: grayscale(0.3);
+    transition: all 0.3s ease;
+}
+
+.nav-card:hover .nav-icon {
+    filter: grayscale(0);
+    transform: scale(1.1);
+}
+
+.nav-card h3 {
+    margin: 15px 0;
+    font-size: 22px;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    color: var(--text-dark);
+    letter-spacing: 0.5px;
+}
+
+.nav-card p {
+    margin: 10px 0 0 0;
+    font-size: 14px;
+    color: var(--text-light);
+    font-weight: 400;
+}
+
+.museum-info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(218, 165, 32, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.info-card h2 {
+    margin-top: 0;
+    font-size: 38px;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.info-card h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-gold), transparent);
+}
+
+.info-card h3 {
+    margin-top: 0;
+    font-size: 26px;
+    font-family: 'Cinzel', serif;
+    font-weight: 600;
+    color: var(--text-dark);
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.info-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background: var(--primary-gold);
+}
+
+.info-card p {
+    line-height: 1.8;
+    font-size: 16px;
+    color: var(--text-dark);
+    margin-bottom: 18px;
+    font-weight: 400;
+}
+
+.card-image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s ease;
+}
+
+.card-image:hover {
+    transform: scale(1.02);
+}
+
+.info-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    transition: transform 0.4s ease;
+}
+
+.info-image:hover {
+    transform: scale(1.02);
+}
+
+.welcome-card .card-content,
+.visit-card .card-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.welcome-card .image-content,
+.visit-card .image-content {
+    height: 350px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.welcome-card .text-content,
+.visit-card .text-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.highlights-list {
+    list-style: none;
+    padding: 0;
+    margin: 25px 0;
+}
+
+.highlights-list li {
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    background: linear-gradient(90deg, rgba(218, 165, 32, 0.08), rgba(218, 165, 32, 0.02));
+    border-left: 3px solid var(--primary-gold);
+    border-radius: 8px;
+    line-height: 1.7;
+    transition: all 0.3s ease;
+}
+
+.highlights-list li:hover {
+    background: linear-gradient(90deg, rgba(218, 165, 32, 0.12), rgba(218, 165, 32, 0.04));
+    transform: translateX(5px);
+}
+
+.highlights-list strong {
+    color: var(--primary-gold);
+    font-weight: 600;
+}
+
+.cta-text {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-dark);
+    padding: 25px 30px;
+    background: linear-gradient(135deg, rgba(218, 165, 32, 0.1), rgba(184, 134, 11, 0.05));
+    border-radius: 12px;
+    border: 2px solid var(--primary-gold);
+    margin-top: 25px;
+}
+
+.cta-text strong {
+    color: var(--primary-gold);
+}
+
+.museum-footer {
+    text-align: center;
+    padding: 40px 30px;
+    margin-top: 50px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(218, 165, 32, 0.2);
+}
+
+.museum-footer p {
+    margin: 12px 0;
+    color: var(--text-light);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.footer-links {
+    margin-top: 18px;
+}
+
+.footer-links a {
+    color: var(--primary-gold);
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 15px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.footer-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-gold);
+    transition: width 0.3s ease;
+}
+
+.footer-links a:hover::after {
+    width: 100%;
+}
+
+.footer-links a:hover {
+    color: var(--secondary-gold);
+}
+
+@media (max-width: 1024px) {
+    .home-container {
+        padding: 25px 20px;
+    }
+
+    .museum-header h1 {
+        font-size: 42px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .museum-header {
+        padding: 50px 30px;
+    }
+
+    .museum-header h1 {
+        font-size: 36px;
+    }
+
+    .tagline {
+        font-size: 16px;
+    }
+
+    .navigation-menu {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-icon {
+        font-size: 48px;
+    }
+
+    .nav-card h3 {
+        font-size: 20px;
+    }
+
+    .info-card {
+        padding: 30px 25px;
+    }
+
+    .info-card h2 {
+        font-size: 28px;
+    }
+
+    .info-card h3 {
+        font-size: 22px;
+    }
+
+    .welcome-card .card-content,
+    .visit-card .card-content {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .welcome-card .image-content,
+    .visit-card .image-content {
+        height: 250px;
+    }
+
+    .card-image {
+        height: 220px;
+    }
+
+    .header-top {
+        position: static;
+        margin-bottom: 25px;
+    }
+
+    .login-button {
+        display: block;
+        width: fit-content;
+        margin: 0 auto 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .museum-header h1 {
+        font-size: 28px;
+    }
+
+    .info-card {
+        padding: 25px 20px;
+    }
+
+    .nav-card {
+        padding: 35px 25px;
+    }
+}

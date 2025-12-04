@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Grand Egyptian Museum</title>
+    <link rel="stylesheet" href="home.css"/>
+    <link rel="stylesheet" href="profile.css"/>
+</head>
+<body>
+    <div class="home-container">
+        <header class="museum-header">
+            <div class="header-top">
+                <a href="index.html" class="back-button">← Home</a>
+                <button id="logoutBtn" class="logout-button">Logout</button>
+            </div>
+            <h1>My Profile</h1>
+            <p class="tagline">Manage Your Account Information</p>
+        </header>
+
+        <section class="profile-section">
+            <!-- User Profile Info -->
+            <div class="info-card">
+                <h2>Profile Information</h2>
+                <div id="profileLoading" class="loading-message">
+                    Loading your profile...
+                </div>
+                <div id="profileInfo" class="profile-info" style="display: none;">
+                    <!-- Profile info will be loaded here -->
+                </div>
+            </div>
+
+            <!-- Update Profile Form -->
+            <div class="info-card">
+                <h2>Update Profile</h2>
+                <form id="updateProfileForm" class="profile-form">
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="profileEmail">Email *</label>
+                            <input type="email" id="profileEmail" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="profileName">Full Name</label>
+                            <input type="text" id="profileName">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="profilePhone">Phone Number</label>
+                            <input type="tel" id="profilePhone">
+                        </div>
+                        <div class="input-group">
+                            <label for="profileCountry">Country</label>
+                            <input type="text" id="profileCountry">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="profileBio">Bio</label>
+                        <textarea id="profileBio" rows="4" placeholder="Tell us about yourself..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Update Profile</button>
+                </form>
+            </div>
+
+            <!-- Change Password -->
+            <div class="info-card">
+                <h2>Change Password</h2>
+                <form id="changePasswordForm" class="profile-form">
+                    <div class="input-group">
+                        <label for="currentPassword">Current Password *</label>
+                        <input type="password" id="currentPassword" required minlength="6">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="input-group">
+                            <label for="newPassword">New Password *</label>
+                            <input type="password" id="newPassword" required minlength="6">
+                        </div>
+                        <div class="input-group">
+                            <label for="confirmPassword">Confirm Password *</label>
+                            <input type="password" id="confirmPassword" required minlength="6">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Change Password</button>
+                </form>
+            </div>
+
+            <!-- Account Statistics -->
+            <div class="info-card">
+                <h2>Account Statistics</h2>
+                <div id="statsLoading" class="loading-message">
+                    Loading statistics...
+                </div>
+                <div id="accountStats" class="stats-grid" style="display: none;">
+                    <!-- Stats will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <footer class="museum-footer">
+            <p>&copy; 2025 Grand Egyptian Museum.</p>
+            <p class="footer-links">
+                <a href="index.html">Home</a> |
+                <a href="tours.html">Tours</a> |
+                <a href="tickets.html">My Bookings</a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="profile.js"></script>
+</body>
+</html>
