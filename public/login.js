@@ -1,23 +1,27 @@
 document.getElementById("loginForm").addEventListener("submit", async(e) => {
     e.preventDefault();
 
-    const email = document.getElementById("loginEmail").ariaValueMax.trim();
-    const password = document.getElementById("loginPassword").ariaValueMax.trim();
+    const email = document.getElementById("loginEmail").value.trim();
+    const password = document.getElementById("loginPassword").value.trim();
 
     let valid = true;
     if (!email.includes("@")) {
-        document.getElementById("loginEmailErr").innerText ="Invalid Email Format";
+        document.getElementById("loginEmailErr").innerText = "Invalid Email Format";
         valid = false;
-    } else document.getElementById("loginEmailErr").innerText = "";
+    } else {
+        document.getElementById("loginEmailErr").innerText = "";
+    }
 
     if (password.length < 6) {
-        document.getElementById("loginPassErr").innerText = "Minimum 6 Characters";
+        document.getElementById("loginPasswordErr").innerText = "Minimum 6 Characters";
         valid = false;
-    } else document.getElementById("loginPassErr").innerText = "";
+    } else {
+        document.getElementById("loginPasswordErr").innerText = "";
+    }
 
     if (!valid) return;
 
-    try{
+    try {
         const res = await fetch("http://localhost:4423/api/v1/auth/login", {
             method: "POST",
             headers: { "Content-Type": "application/json"},
@@ -28,12 +32,15 @@ document.getElementById("loginForm").addEventListener("submit", async(e) => {
         const data = await res.json();
         if (res.ok) {
             alert(data.message);
-            window.location.href = "home.html";
+            if (data.token) {
+                localStorage.setItem('authToken', data.token);
+            }
+            window.location.href = "index.html";
         } else {
-            alert(data.message || "Login Failed");
+            alert(data.message || data.error || "Login Failed");
         }
     } catch (err) {
         console.log(err);
-        alert("Could Not connect to server. Try again later.");
+        alert("Could not connect to server. Try again later.");
     }
 });

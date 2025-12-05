@@ -1,4 +1,4 @@
-document.getElementById("Signupform").addEventListener("submit", async(e) => {
+document.getElementById("SignupForm").addEventListener("submit", async(e) => {
     e.preventDefault();
 
     const email = document.getElementById("SignupEmail").value.trim();
@@ -28,7 +28,7 @@ document.getElementById("Signupform").addEventListener("submit", async(e) => {
         const data = await res.json();
         if (res.ok) {
             alert(data.message);
-            window.location.href = "login.html";
+            window.location.href = "signup.html";
         } else {
             alert(data.message || "Signup Failed");
         }
